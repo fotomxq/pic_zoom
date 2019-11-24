@@ -56,7 +56,7 @@ func run(path string) error {
 		if IsImage(v) {
 			fmt.Println("zoom new image: " + v)
 			if err := Zoom(v, v, configData.Width, configData.Height); err != nil{
-				return err
+				fmt.Println("cannot zoom image src:" + v + ", err: " + err.Error())
 			}
 			continue
 		}
